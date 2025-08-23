@@ -23,21 +23,22 @@
 
 /* Use your working GitHub image URLs */
 .slide:nth-child(1) {
-  background-image: url('https://github.com/iCloudPhantom/Analytica_India/blob/main/analytica-india-website/images/background1.jpg?raw=true');
+  background-image: url('https://raw.githubusercontent.com/iCloudPhantom/Analytica_India/refs/heads/main/images/background1.jpg');
 }
 
 .slide:nth-child(2) {
-  background-image: url('https://github.com/iCloudPhantom/Analytica_India/blob/main/analytica-india-website/images/background2.jpg?raw=true');
+  background-image: url('https://raw.githubusercontent.com/iCloudPhantom/Analytica_India/refs/heads/main/images/background2.jpg');
 }
 
 .slide:nth-child(3) {
-  background-image: url('https://github.com/iCloudPhantom/Analytica_India/blob/main/analytica-india-website/images/background3.jpg?raw=true');
+  background-image: url('https://raw.githubusercontent.com/iCloudPhantom/Analytica_India/refs/heads/main/images/background3.jpg');
 }
 
 .slide:nth-child(4) {
-  background-image: url('https://github.com/iCloudPhantom/Analytica_India/blob/main/analytica-india-website/images/background4.jpg?raw=true');
+  background-image: url('https://raw.githubusercontent.com/iCloudPhantom/Analytica_India/refs/heads/main/images/background4.jpg');
 }
 
 .slide:nth-child(5) {
-  background-image: url('https://github.com/iCloudPhantom/Analytica_India/blob/main/analytica-india-website/images/background5.jpg?raw=true');
+  background-image: url('https://raw.githubusercontent.com/iCloudPhantom/Analytica_India/refs/heads/main/images/background5.jpg');
+
 }
