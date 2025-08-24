@@ -1,8 +1,11 @@
+/* -----------------------------------
+   Global Styles & Reset
+----------------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Smooth scroll for anchor links */
 }
 
 body {
@@ -10,12 +13,14 @@ body {
   background: #f8fafc;
   color: #333;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Navigation */
+/* -----------------------------------
+   Navigation Bar
+----------------------------------- */
 nav {
-  position: sticky;
+  position: sticky; /* Stays visible when scrolling */
   top: 0;
   background: rgba(0, 51, 102, 0.95);
   display: flex;
@@ -24,7 +29,7 @@ nav {
   padding: 1.2rem 0;
   z-index: 100;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); /* Frosted-glass effect */
 }
 
 nav a {
@@ -41,7 +46,9 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Header */
+/* -----------------------------------
+   Hero Header Section
+----------------------------------- */
 header {
   position: relative;
   height: 100vh;
@@ -54,6 +61,7 @@ header {
   overflow: hidden;
 }
 
+/* Overlay gradient background */
 header .overlay {
   position: absolute;
   top: 0;
@@ -64,11 +72,12 @@ header .overlay {
   z-index: 1;
 }
 
+/* Main hero text content */
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 800px;
-  animation: fadeInUp 1s ease-out;
+  animation: fadeInUp 1s ease-out; /* Entrance animation */
 }
 
 .hero-content h1 {
@@ -77,8 +86,8 @@ header .overlay {
   margin-bottom: 1.5rem;
   background: linear-gradient(to right, #00c6ff, #0072ff, #0056b3);
   -webkit-background-clip: text;
-  background-clip: text; /* Added standard property */
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Gradient text effect */
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -90,6 +99,7 @@ header .overlay {
   line-height: 1.5;
 }
 
+/* Call-to-action buttons */
 .cta-button {
   display: inline-block;
   padding: 1rem 2.5rem;
@@ -101,6 +111,7 @@ header .overlay {
   font-size: 1.1rem;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+  margin: 0.5rem;
 }
 
 .cta-button:hover {
@@ -108,13 +119,26 @@ header .overlay {
   box-shadow: 0 6px 20px rgba(0, 114, 255, 0.4);
 }
 
-/* Section */
+/* Secondary (outlined) button style */
+.cta-button.secondary {
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* -----------------------------------
+   Generic Section Styling
+----------------------------------- */
 section {
   padding: 5rem 2rem;
   max-width: 1200px;
   margin: auto;
 }
 
+/* Section headers */
 .section-header {
   text-align: center;
   margin-bottom: 3.5rem;
@@ -147,7 +171,76 @@ section {
   margin: 0 auto;
 }
 
-/* Cards */
+/* -----------------------------------
+   About Section
+----------------------------------- */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* -----------------------------------
+   Stats Section
+----------------------------------- */
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  min-width: 200px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0072ff;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #666;
+  font-weight: 600;
+}
+
+/* -----------------------------------
+   Cards Section
+----------------------------------- */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -167,6 +260,7 @@ section {
   overflow: hidden;
 }
 
+/* Gradient bar on hover */
 .card:before {
   content: '';
   position: absolute;
@@ -194,7 +288,7 @@ section {
   margin-bottom: 1.5rem;
   background: linear-gradient(to right, #0072ff, #00c6ff);
   -webkit-background-clip: text;
-  background-clip: text; /* Added standard property */
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -207,9 +301,150 @@ section {
 .card p {
   color: #666;
   line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
-/* Contact Form */
+.card-link {
+  display: inline-flex;
+  /* align-items: center; */
+  color: #0072ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  align-items: baseline; /* makes text + icon vertically aligned */
+  gap: 6px;            /* small space between text and arrow */
+}
+
+.card-link i {
+  font-size: 1em;    /* keep arrow slightly smaller */
+  line-height: 2;      /* ensures it's centered */
+}
+
+.card-link:hover {
+  color: #0056b3;
+  transform: translateX(5px);
+}
+
+/* -----------------------------------
+   Testimonials
+----------------------------------- */
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.testimonial {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  max-width: 350px;
+  position: relative;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Quotation mark decoration */
+.testimonial-text:before {
+  content: "“";
+  font-size: 4rem;
+  color: #0072ff;
+  opacity: 0.2;
+  position: absolute;
+  top: -1.5rem;
+  left: -1rem;
+  font-family: Arial, sans-serif;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1rem;
+}
+
+.author-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-info h4 {
+  margin-bottom: 0.2rem;
+  color: #003366;
+}
+
+.author-info p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* -----------------------------------
+   Resources Section
+----------------------------------- */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.resource-item {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.resource-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.resource-icon {
+  font-size: 2.5rem;
+  color: #0072ff;
+  margin-bottom: 1rem;
+}
+
+.resource-links {
+  margin-top: 1.5rem;
+}
+
+.resource-link {
+  display: flex;
+  align-items: center;
+  color: #0072ff;
+  text-decoration: none;
+  margin-bottom: 0.8rem;
+  transition: all 0.3s;
+}
+
+.resource-link:hover {
+  color: #0056b3;
+  transform: translateX(5px);
+}
+
+.resource-link i {
+  margin-right: 0.5rem;
+}
+
+/* -----------------------------------
+   Contact Form
+----------------------------------- */
 .form-container {
   background: #fff;
   padding: 3rem;
@@ -237,7 +472,7 @@ form label {
   font-size: 0.95rem;
 }
 
-form input, form textarea {
+form input, form textarea, form select {
   padding: 1rem 1.2rem;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -246,7 +481,7 @@ form input, form textarea {
   transition: all 0.3s;
 }
 
-form input:focus, form textarea:focus {
+form input:focus, form textarea:focus, form select:focus {
   outline: none;
   border-color: #0072ff;
   box-shadow: 0 0 0 3px rgba(0, 114, 255, 0.1);
@@ -270,28 +505,145 @@ form button:hover {
   box-shadow: 0 5px 15px rgba(0, 114, 255, 0.3);
 }
 
-/* Footer */
+/* -----------------------------------
+   Form Status Messages
+----------------------------------- */
+.form-status {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: block;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* While sending */
+.form-status.loading {
+  color: #555;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  position: relative;
+}
+
+/* ✅ Little loading spinner animation */
+.form-status.loading::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ccc;
+  border-top: 2px solid #0072ff;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 8px;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
+}
+
+/* Success message (blue-green tone to match theme) */
+.form-status.success {
+  color: #004085;
+  background-color: #cce5ff;
+  border: 1px solid #b8daff;
+}
+
+/* Error message (blue-red tone for consistency) */
+.form-status.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+/* -----------------------------------
+   Footer
+----------------------------------- */
 footer {
   background: linear-gradient(to right, #00264d, #003366);
-  text-align: center;
-  padding: 3rem 2rem;
+  padding: 4rem 2rem 2rem;
   color: #ccc;
   font-size: 0.95rem;
-  margin-top: 5rem;
 }
 
-.footer-content {
+.footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
 }
 
+.footer-logo {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-about {
+  line-height: 1.6;
+}
+
+.footer-heading {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-heading:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background: #0072ff;
+  border-radius: 2px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  transform: translateX(5px);
+}
+
+.footer-links a i {
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* Social icons */
 .social-links {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .social-links a {
@@ -311,6 +663,14 @@ footer {
   transform: translateY(-3px);
 }
 
+/* Footer bottom bar */
+.footer-bottom {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 footer a {
   color: #ffcc00;
   text-decoration: none;
@@ -322,7 +682,9 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Animations */
+/* -----------------------------------
+   Animations
+----------------------------------- */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -334,7 +696,9 @@ footer a:hover {
   }
 }
 
-/* Responsive Design */
+/* -----------------------------------
+   Responsive Design
+----------------------------------- */
 @media (max-width: 768px) {
   nav {
     gap: 1.5rem;
@@ -356,5 +720,13 @@ footer a:hover {
   
   .form-container {
     padding: 2rem 1.5rem;
+  }
+  
+  .about-content {
+    flex-direction: column; /* Stack items on smaller screens */
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr; /* Single column footer */
   }
 }
