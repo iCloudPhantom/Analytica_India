@@ -1,0 +1,49 @@
+// ==========================
+// Formspree Form Handling
+// ==========================
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Grab the form and the status message container
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  
+  // Ensure the form exists on the page before attaching logic
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Stop default browser submit (page reload)
+      
+      // Collect form data (name, email, message, etc.)
+      const formData = new FormData(form);
+      
+      // Update the status message to show "loading..."
+      status.innerHTML = 'Sending your message...';
+      status.className = 'form-status loading';
+      
+      // Send the form data to Formspree via fetch()
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json' // Tell Formspree we expect JSON back
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // ✅ Success: show thank-you message and reset form
+          status.innerHTML = 'Thanks for your message! We\'ll get back to you soon.';
+          status.className = 'form-status success';
+          form.reset();
+        } else {
+          // ❌ Server responded but not OK (e.g., validation issue)
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        // ❌ Network or other error
+        status.innerHTML = 'Oops! There was a problem sending your message. Please try again.';
+        status.className = 'form-status error';
+        console.error('Form submission error:', error);
+      });
+    });
+  }
+});
