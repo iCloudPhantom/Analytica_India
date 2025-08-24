@@ -4,23 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Analytica India - Business Intelligence Solutions</title>
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- External Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/background-slideshow.css">
+  
+  <!-- ================= GOOGLE ANALYTICS ================= -->
+  <!-- ADDED -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID'); // Replace with your GA ID
+  </script>
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- ================= NAVBAR ================= -->
   <nav>
     <a href="#home">Home</a>
+    <a href="#about">About</a>
     <a href="#features">Services</a>
     <a href="#gallery">Portfolio</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#resources">Resources</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Header with dynamic background -->
+  <!-- ================= HEADER / HERO ================= -->
   <header id="home">
+    <!-- Background Slideshow Images -->
     <div class="background-slideshow">
       <div class="slide active"></div>
       <div class="slide"></div>
@@ -29,41 +49,93 @@
       <div class="slide"></div>
     </div>
     
+    <!-- Dark Overlay for Readability -->
     <div class="overlay"></div>
+
+    <!-- Hero Text & CTA Buttons -->
     <div class="hero-content">
       <h1>Analytica India</h1>
       <p>Transforming data into actionable insights with advanced analytics, AI, and automation</p>
-      <a href="#contact" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></a>
+      <div>
+        <a href="#contact" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></a>
+        <a href="#features" class="cta-button secondary">Our Services <i class="fas fa-chart-line"></i></a>
+      </div>
     </div>
   </header>
 
-  <!-- Features / Services -->
+  <!-- ================= ABOUT SECTION ================= -->
+  <section id="about">
+    <div class="section-header">
+      <h2>About Us</h2>
+      <p>We are a team of data experts dedicated to helping businesses unlock the power of their data</p>
+    </div>
+    
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Driving Business Growth Through Data Intelligence</h3>
+        <p>Analytica India was founded in 2015 with a mission to democratize data analytics for businesses of all sizes. Our team of experienced data scientists, analysts, and engineers work together to deliver cutting-edge solutions that drive growth and efficiency.</p>
+        <p>We believe that data is the most valuable asset for any modern business, and our goal is to help you harness its power to make informed decisions, optimize operations, and discover new opportunities.</p>
+        <a href="#contact" class="card-link">Learn more about our approach <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <!-- About Section Image -->
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our team working on data analysis">
+      </div>
+    </div>
+    
+    <!-- Stats / Highlights -->
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-number">250+</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Data Experts</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">8</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES / FEATURES ================= -->
   <section id="features">
     <div class="section-header">
       <h2>Our Services</h2>
       <p>We provide cutting-edge solutions to help your business make data-driven decisions</p>
     </div>
     
+    <!-- Service Cards -->
     <div class="cards">
       <div class="card">
         <i class="fas fa-chart-line"></i>
         <h3>Business Intelligence</h3>
         <p>Turn data into actionable insights and strategic decisions with our advanced analytics solutions.</p>
+        <a href="#" class="card-link">View BI projects <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="card">
         <i class="fas fa-brain"></i>
         <h3>AI & Automation</h3>
         <p>Boost productivity with custom machine learning models and intelligent automation tools.</p>
+        <a href="#" class="card-link">AI solutions <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="card">
         <i class="fas fa-cloud"></i>
         <h3>Cloud Solutions</h3>
         <p>Scalable, secure cloud infrastructure tailored to your business needs and growth objectives.</p>
+        <a href="#" class="card-link">Cloud services <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </section>
 
-  <!-- Gallery / Portfolio -->
+  <!-- ================= GALLERY / PORTFOLIO ================= -->
   <section id="gallery">
     <div class="section-header">
       <h2>Portfolio Highlights</h2>
@@ -71,30 +143,147 @@
     </div>
     
     <div class="cards">
+      <!-- Example Portfolio Cards -->
       <div class="card">
         <i class="fas fa-chart-pie"></i>
         <h3>Power BI Dashboards</h3>
         <p>Interactive visualizations that provide real-time insights into key business metrics.</p>
+        <a href="#" class="card-link">View dashboard examples <i class="fas fa-external-link-alt"></i></a>
       </div>
       <div class="card">
         <i class="fas fa-file-excel"></i>
         <h3>Excel Automation</h3>
         <p>Custom Excel solutions that streamline data processing and reporting workflows.</p>
+        <a href="#" class="card-link">See automation tools <i class="fas fa-external-link-alt"></i></a>
       </div>
       <div class="card">
         <i class="fas fa-calculator"></i>
-        <h3>Cost Analysis</h3>
-        <p>Comprehensive cost analysis systems that identify savings opportunities and optimize spending.</p>
+        <h3>Should Cost Analysis</h3>
+        <p>Comprehensive should cost analysis systems that identify savings opportunities and optimize spending.</p>
+        <a href="#" class="card-link">Should Cost analysis <i class="fas fa-external-link-alt"></i></a>
       </div>
       <div class="card">
         <i class="fas fa-robot"></i>
         <h3>AI Solutions</h3>
         <p>Intelligent systems that learn from your data to predict trends and automate decisions.</p>
+        <a href="#" class="card-link">AI projects <i class="fas fa-external-link-alt"></i></a>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- ================= TESTIMONIALS ================= -->
+  <section id="testimonials" style="background: #f0f5ff;">
+    <div class="section-header">
+      <h2>Client Testimonials</h2>
+      <p>What our clients say about our services and solutions</p>
+    </div>
+    
+    <div class="testimonials">
+      <!-- Each Testimonial -->
+      <div class="testimonial">
+        <div class="testimonial-text">
+          Analytica India transformed our data infrastructure and provided insights that helped us increase revenue by 23% in just six months.
+        </div>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma">
+          </div>
+          <div class="author-info">
+            <h4>Rahul Sharma</h4>
+            <p>CTO, TechGrowth Solutions</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial">
+        <div class="testimonial-text">
+          The Power BI dashboards created by Analytica India have become an indispensable tool for our executive team's daily decision-making.
+        </div>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel">
+          </div>
+          <div class="author-info">
+            <h4>Priya Patel</h4>
+            <p>CEO, Innovate Services</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial">
+        <div class="testimonial-text">
+          Their should cost analysis system identified savings opportunities we never would have found on our own. Highly recommended!
+        </div>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Amit Verma">
+          </div>
+          <div class="author-info">
+            <h4>Amit Verma</h4>
+            <p>Finance Director, Global Retail Inc.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESOURCES ================= -->
+  <section id="resources">
+    <div class="section-header">
+      <h2>Resources & Tools</h2>
+      <p>Helpful resources to expand your data analytics knowledge</p>
+    </div>
+
+    <div class="resources-grid">
+      <!-- Resource Items -->
+      <div class="resource-item">
+        <div class="resource-icon">
+          <i class="fas fa-book"></i>
+        </div>
+        <h3>Learning Resources</h3>
+        <p>Expand your knowledge with our curated collection of books, tutorials, and guides.</p>
+        <div class="resource-links">
+          <a href="#" class="resource-link"><i class="fas fa-external-link-alt"></i> Power BI Tutorials</a>
+          <a href="#" class="resource-link"><i class="fas fa-external-link-alt"></i> Excel Advanced Formulas</a>
+          <a href="#" class="resource-link"><i class="fas fa-external-link-alt"></i> Data Visualization Guide</a>
+        </div>
+      </div>
+
+      <div class="resource-item">
+        <div class="resource-icon">
+          <i class="fas fa-tools"></i>
+        </div>
+        <h3>Free Tools</h3>
+        <p>Try our free tools to get started with data analysis and visualization.</p>
+        <div class="resource-links">
+          <a href="tools/data-cleaning.html" class="resource-link" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Data Cleaning Tool
+          </a>
+          <a href="tools/dashboard-templates.html" class="resource-link" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Dashboard Templates
+          </a>
+          <a href="tools/roi-calculator.html" class="resource-link" target="_blank">
+            <i class="fas fa-external-link-alt"></i> ROI Calculator
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-item">
+        <div class="resource-icon">
+          <i class="fas fa-blog"></i>
+        </div>
+        <h3>Blog & Articles</h3>
+        <p>Read our latest insights on data analytics, BI trends, and industry best practices.</p>
+        <div class="resource-links">
+          <a href="#" class="resource-link"><i class="fas fa-external-link-alt"></i> Latest Articles</a>
+          <a href="#" class="resource-link"><i class="fas fa-external-link-alt"></i> Case Studies</a>
+          <a href="#" class="resource-link"><i class="fas fa-external-link-alt"></i> Industry Reports</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
   <section id="contact">
     <div class="section-header">
       <h2><i class="fas fa-envelope"></i> Contact Us</h2>
@@ -102,41 +291,129 @@
     </div>
     
     <div class="form-container">
-      <form id="contact-form">
+      <!-- Added "name" attributes for Formspree to work -->
+      <form id="contact-form" action="https://formspree.io/f/xgvlwoob" method="POST">
         <div class="form-group">
           <label for="name">Your Name</label>
-          <input type="text" id="name" placeholder="Enter your name" required />
+          <input type="text" id="name" name="name" placeholder="Enter your name" required />
         </div>
         
         <div class="form-group">
           <label for="email">Your Email</label>
-          <input type="email" id="email" placeholder="Enter your email" required />
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" name="company" placeholder="Enter your company name" />
+        </div>
+        
+        <div class="form-group">
+          <label for="service">Service Interested In</label>
+          <select id="service" name="service">
+            <option value="">Select a service</option>
+            <option value="bi">Business Intelligence</option>
+            <option value="ai">AI & Automation</option>
+            <option value="cloud">Cloud Solutions</option>
+            <option value="cost">Should Cost Analysis</option>
+            <option value="other">Other</option>
+          </select>
         </div>
         
         <div class="form-group">
           <label for="message">Your Message</label>
-          <textarea id="message" rows="5" placeholder="How can we help you?" required></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
         </div>
         
-        <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
-      </form>
+        <!-- ✅ Status messages will show up here -->
+          <p id="form-status" class="form-status"></p>
+
+        <!-- Submit Button -->
+          <button type="submit">Send Message</button>
+        </form>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ================= FOOTER ================= -->
   <footer>
-    <div class="footer-content">
-      <div class="social-links">
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
+    <div class="footer-container">
+      <!-- About -->
+      <div class="footer-about">
+        <div class="footer-logo">Analytica India</div>
+        <p>Transforming businesses through data-driven insights and advanced analytics solutions. Empowering organizations to make smarter decisions.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/company/analytica-india" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <!-- Optional Social Icons -->
+          <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+          <a href="mailto:info@analyticaindia.com"><i class="fas fa-envelope"></i></a>
+        </div>
       </div>
       
+      <!-- Services Links -->
+      <div class="footer-services">
+        <h3 class="footer-heading">Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="#features"><i class="fas fa-arrow-right"></i> Business Intelligence</a></li>
+          <li><a href="#features"><i class="fas fa-arrow-right"></i> AI & Machine Learning</a></li>
+          <li><a href="#features"><i class="fas fa-arrow-right"></i> Cloud Solutions</a></li>
+          <li><a href="#features"><i class="fas fa-arrow-right"></i> Data Visualization</a></li>
+          <li><a href="#features"><i class="fas fa-arrow-right"></i> Should Cost Analysis</a></li>
+        </ul>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#home"><i class="fas fa-arrow-right"></i> Home</a></li>
+          <li><a href="#about"><i class="fas fa-arrow-right"></i> About Us</a></li>
+          <li><a href="#features"><i class="fas fa-arrow-right"></i> Services</a></li>
+          <li><a href="#gallery"><i class="fas fa-arrow-right"></i> Portfolio</a></li>
+          <li><a href="#contact"><i class="fas fa-arrow-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="footer-contact">
+        <h3 class="footer-heading">Contact Info</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Tech Park, Bangalore, India</a></li>
+          <li><a href="tel:+911234567890"><i class="fas fa-phone"></i> +91 123 456 7890</a></li>
+          <li><a href="mailto:info@analyticaindia.com"><i class="fas fa-envelope"></i> info@analyticaindia.com</a></li>
+          <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
       <p>&copy; 2025 Analytica India. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </div>
   </footer>
 
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script src="js/analytics.js"></script>
+  <script src="js/form-handler.js"></script>
   <script src="js/script.js"></script>
+
+  <!-- ================= HEATMAP CLICK TRACKER ================= -->
+  <!-- ADDED -->
+  <script>
+    document.addEventListener('click', function(e) {
+      const x = e.pageX;
+      const y = e.pageY;
+      const target = e.target.tagName + 
+                    (e.target.id ? '#' + e.target.id : '') + 
+                    (e.target.className ? '.' + e.target.className.toString().replace(/\s+/g, '.') : '');
+
+      // Send click data to Google Analytics
+      gtag('event', 'click_heatmap', {
+        'event_category': 'Heatmap',
+        'event_label': target,
+        'value': JSON.stringify({ x, y })
+      });
+    });
+  </script>
 </body>
 </html>
