@@ -1,0 +1,103 @@
+// -----------------------------
+// Google Analytics Tracking Setup
+// -----------------------------
+
+// Replace GA_MEASUREMENT_ID with your actual Google Analytics ID
+const GA_TRACKING_ID = 'GA_MEASUREMENT_ID';
+
+// Initialize Google Analytics
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+
+// Standard GA script initialization
+gtag('js', new Date());
+gtag('config', GA_TRACKING_ID);
+
+// -----------------------------
+// Custom Event Tracking
+// -----------------------------
+document.addEventListener('DOMContentLoaded', function () {
+
+  /** -----------------------------------------
+   * Track FORM submissions
+   * ----------------------------------------- */
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function () {
+      gtag('event', 'form_submission', {
+        'event_category': 'Contact',
+        'event_label': 'Contact Form Submission'
+      });
+    });
+  }
+
+  /** -----------------------------------------
+   * Track OUTBOUND link clicks (external sites)
+   * ----------------------------------------- */
+  document.querySelectorAll('a[href^="http"]').forEach(link => {
+    link.addEventListener('click', function () {
+      const url = this.getAttribute('href');
+
+      // Only track if it's NOT your own domain
+      if (url.includes(window.location.hostname)) return;
+
+      gtag('event', 'outbound_click', {
+        'event_category': 'Outbound',
+        'event_label': url,
+        'transport_type': 'beacon' // Ensures event is sent even if page unloads
+      });
+    });
+  });
+
+  /** -----------------------------------------
+   * Track PHONE clicks
+   * ----------------------------------------- */
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', function () {
+      gtag('event', 'phone_call', {
+        'event_category': 'Contact',
+        'event_label': this.getAttribute('href')
+      });
+    });
+  });
+
+  /** -----------------------------------------
+   * Track EMAIL clicks
+   * ----------------------------------------- */
+  document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+    link.addEventListener('click', function () {
+      gtag('event', 'email_click', {
+        'event_category': 'Contact',
+        'event_label': this.getAttribute('href')
+      });
+    });
+  });
+
+  /** -----------------------------------------
+   * Track ALL clicks (with details)
+   * -----------------------------------------
+   * This gives much more detail:
+   * - What element was clicked
+   * - Which section/page area
+   * - X/Y position of click on screen
+   * ----------------------------------------- */
+  document.addEventListener('click', function (e) {
+    const clickedElement = e.target; // The actual element clicked
+    const tagName = clickedElement.tagName; // E.g., BUTTON, A, DIV
+    const classes = clickedElement.className; // Element classes
+    const id = clickedElement.id; // Element ID
+    const text = clickedElement.innerText.slice(0, 30); // Shorten text to avoid overload
+    const x = e.clientX; // X position in viewport
+    const y = e.clientY; // Y position in viewport
+
+    // Fire custom GA event
+    gtag('event', 'page_click', {
+      'event_category': 'User Interaction',
+      'event_label': `Tag: ${tagName}, ID: ${id || 'none'}, Class: ${classes || 'none'}, Text: "${text}"`,
+      'click_x': x,
+      'click_y': y,
+      'page_path': window.location.pathname
+    });
+  });
+
+});
